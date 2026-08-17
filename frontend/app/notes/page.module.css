@@ -1,0 +1,498 @@
+.desk {
+  position: relative;
+  min-height: 100vh;
+  padding: 92px 24px 48px;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--soft-ink);
+  font-size: 18px;
+  font-family: var(--font-hand);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.title {
+  font-family: var(--font-hand);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleFlower {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  animation: flowerSway 4.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.titleFlower svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes flowerSway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(7deg); }
+}
+
+.addBtn {
+  font-family: var(--font-hand);
+  background: linear-gradient(135deg, #F8BBD0, #C9B8F0);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 5px 16px rgba(200, 130, 170, 0.32);
+  transition: all 0.25s ease;
+}
+
+.addBtn:hover {
+  transform: translateY(-2px) rotate(-1.5deg);
+  box-shadow: 0 8px 22px rgba(200, 130, 170, 0.4);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 18px;
+  font-family: var(--font-hand);
+  font-size: 14px;
+  color: var(--dark-text);
+  background: rgba(255, 249, 232, 0.85);
+  border: 1.5px dashed #E9C25B;
+  border-radius: 14px 4px 14px 4px;
+  margin-bottom: 24px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(200, 160, 90, 0.12);
+}
+
+.searchInput::placeholder { color: #B89B62; }
+
+.searchInput:focus {
+  border-style: solid;
+  border-color: #F48FB1;
+  background: #FFFDF7;
+  box-shadow: 0 0 0 4px rgba(248, 187, 208, 0.22);
+}
+
+/* ---------- pastel index cards ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  border: 1.5px dashed rgba(200, 130, 170, 0.4);
+  border-radius: 255px 14px 225px 14px / 14px 225px 14px 255px;
+  padding: 22px 20px 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(155, 111, 143, 0.14);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:nth-child(4n+1) { background: linear-gradient(160deg, #FFF2F9, #FFE7F2); transform: rotate(-0.8deg); }
+.card:nth-child(4n+2) { background: linear-gradient(160deg, #F1F8FF, #E3F1FE); transform: rotate(0.7deg); }
+.card:nth-child(4n+3) { background: linear-gradient(160deg, #F6F1FF, #EDE3FB); transform: rotate(-0.5deg); }
+.card:nth-child(4n+4) { background: linear-gradient(160deg, #F1FBF4, #E5F6EB); transform: rotate(0.6deg); }
+
+.card:hover {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: 0 14px 32px rgba(155, 111, 143, 0.22);
+  border-style: solid;
+  border-color: rgba(244, 143, 177, 0.5);
+}
+
+.card.pinned {
+  border-style: solid;
+  border-color: rgba(244, 143, 177, 0.6);
+  box-shadow: 0 8px 24px rgba(244, 143, 177, 0.22);
+}
+
+.cardTape {
+  top: -12px;
+  left: 16px;
+}
+
+.pinBadge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 15px;
+}
+
+.cardContent {
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 8px;
+  padding-right: 30px;
+  word-break: break-word;
+}
+
+.cardText {
+  font-family: var(--font-hand);
+  font-size: 13.5px;
+  color: var(--soft-ink);
+  line-height: 1.6;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1.5px dashed rgba(200, 130, 170, 0.35);
+  padding-top: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cardDate {
+  font-family: var(--font-hand);
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.cardActions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  font-family: var(--font-hand);
+  background: rgba(255, 253, 247, 0.85);
+  border: 1px dashed rgba(200, 130, 170, 0.4);
+  padding: 5px 10px;
+  border-radius: 10px 3px 10px 3px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--dark-text);
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background: #fff;
+  border-style: solid;
+  transform: rotate(-1.5deg);
+}
+
+.deleteBtn {
+  background: rgba(229, 115, 139, 0.12);
+  color: var(--danger);
+  border-color: rgba(229, 115, 139, 0.35);
+}
+
+.deleteBtn:hover {
+  background: rgba(229, 115, 139, 0.2);
+}
+
+.empty {
+  text-align: center;
+  padding: 48px 20px 40px;
+  color: var(--gray);
+  font-size: 15px;
+  font-family: var(--font-hand);
+}
+
+.emptyDoodle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* ---------- modal ---------- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* soft overlay — the cute notebook stays visible behind the paper note */
+  background: rgba(90, 74, 99, 0.16);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 247, 0.98), rgba(255, 250, 240, 0.98)),
+    var(--paper-grain, none);
+  border: 1px solid rgba(248, 187, 208, 0.55);
+  border-radius: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  padding: 26px 26px 22px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow:
+    0 18px 46px rgba(155, 111, 143, 0.28),
+    inset 0 0 0 6px rgba(255, 253, 247, 0.6),
+    inset 0 0 40px rgba(248, 187, 208, 0.07);
+  transform: rotate(-0.4deg);
+  animation: paperDrop 0.38s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+}
+
+@keyframes paperDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) rotate(-2.5deg) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-3px) rotate(-0.2deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(-0.4deg) scale(1);
+  }
+}
+
+.modalTape {
+  top: -13px;
+  left: 42px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 253, 247, 0.9);
+  border: 1.5px dashed rgba(200, 130, 170, 0.5);
+  color: #D96A96;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 3;
+}
+
+.closeBtn:hover {
+  background: #fff;
+  border-style: solid;
+  transform: rotate(90deg);
+}
+
+.modalTitle {
+  font-family: var(--font-hand);
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-right: 34px;
+  color: var(--dark-text);
+}
+
+/* tiny doodles peeking at the corners of the paper note */
+.modalDoodle1 {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  width: 20px;
+  opacity: 0.85;
+  transform: rotate(-12deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.modalDoodle2 {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 16px;
+  opacity: 0.8;
+  transform: rotate(10deg);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.formGroup {
+  margin-bottom: 14px;
+}
+
+.formGroup label {
+  display: block;
+  font-family: var(--font-hand);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--soft-ink);
+  margin-bottom: 6px;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: var(--dark-text);
+  background: rgba(255, 253, 247, 0.8);
+  border: 1.5px dashed rgba(200, 130, 170, 0.45);
+  border-radius: 12px 4px 12px 4px;
+  transition: all 0.25s ease;
+  resize: vertical;
+}
+
+.modalInput:focus {
+  border-style: solid;
+  border-color: #F48FB1;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(248, 187, 208, 0.2);
+}
+
+/* tiny ruled notebook page for the note content */
+.ruledTextarea {
+  --line-h: 26px;
+  line-height: var(--line-h);
+  background-color: rgba(255, 253, 247, 0.85);
+  background-image:
+    linear-gradient(90deg, rgba(229, 115, 139, 0.45) 0, rgba(229, 115, 139, 0.45) 2px, transparent 2px),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--line-h) - 1px),
+      rgba(138, 173, 224, 0.42) calc(var(--line-h) - 1px),
+      rgba(138, 173, 224, 0.42) var(--line-h)
+    );
+  padding: 4px 12px 6px 30px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cancelBtn {
+  font-family: var(--font-hand);
+  padding: 9px 20px;
+  border-radius: 12px 4px 12px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(255, 253, 247, 0.9);
+  border: 1.5px dashed rgba(200, 130, 170, 0.45);
+  color: var(--dark-text);
+  transition: all 0.2s ease;
+}
+
+.cancelBtn:hover {
+  background: #fff;
+  border-style: solid;
+}
+
+.saveBtn {
+  font-family: var(--font-hand);
+  padding: 9px 26px;
+  border-radius: 255px 10px 225px 10px / 10px 225px 10px 255px;
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #F8BBD0, #C9B8F0);
+  color: #fff;
+  border: none;
+  box-shadow: 0 5px 16px rgba(200, 130, 170, 0.32);
+  transition: all 0.25s ease;
+}
+
+.saveBtn:hover {
+  transform: translateY(-2px) rotate(-1deg);
+  box-shadow: 0 8px 22px rgba(200, 130, 170, 0.42);
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255, 253, 247, 0.96);
+  backdrop-filter: blur(18px);
+  padding: 16px 24px;
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
+  box-shadow: 0 8px 32px rgba(90, 74, 99, 0.18);
+  z-index: 2000;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--font-hand);
+  animation: slideIn 0.3s ease;
+}
+
+.toast.success { border-left: 4px solid var(--success); }
+.toast.error { border-left: 4px solid var(--danger); }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- doodles ---------- */
+
+.doodleHeart1 { position: absolute; top: 120px; left: 5%; width: 30px; z-index: 1; transform: rotate(-14deg); opacity: 0.85; }
+.doodleStar1 { position: absolute; top: 200px; right: 5%; width: 26px; z-index: 1; transform: rotate(12deg); opacity: 0.85; }
+.doodleSpark1 { position: absolute; top: 105px; right: 15%; width: 24px; z-index: 1; transform: rotate(8deg); opacity: 0.9; }
+.doodleSpark2 { position: absolute; bottom: 130px; left: 12%; width: 20px; z-index: 1; transform: rotate(-16deg); opacity: 0.9; }
+.doodleFlower1 { position: absolute; top: 85px; left: 19%; width: 32px; z-index: 1; transform: rotate(8deg); opacity: 0.9; }
+.doodleCloud { position: absolute; top: 250px; right: 20%; width: 60px; z-index: 1; opacity: 0.85; transform: rotate(-3deg); }
+.doodleSquiggle1 { position: absolute; bottom: 110px; right: 12%; width: 80px; z-index: 1; opacity: 0.75; }
+.doodleBow { position: absolute; bottom: 190px; left: 22%; width: 34px; z-index: 1; transform: rotate(-14deg); opacity: 0.9; }
+
+@media (max-width: 768px) {
+  .desk { padding: 84px 16px 120px; }
+  .title { font-size: 27px; }
+  .grid { grid-template-columns: 1fr; }
+
+  .doodleHeart1, .doodleStar1, .doodleCloud, .doodleSquiggle1,
+  .doodleBow, .doodleFlower1 { display: none; }
+
+  .doodleSpark1 { top: 100px; right: 8%; width: 18px; }
+  .doodleSpark2 { bottom: 170px; left: 8%; width: 16px; }
+}

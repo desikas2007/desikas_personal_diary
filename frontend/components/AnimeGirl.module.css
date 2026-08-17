@@ -1,0 +1,429 @@
+/* Original CSS anime girl — chibi proportions, pastel pink/lavender/cream palette. */
+
+.girlWrap {
+  width: 250px;
+  height: 330px;
+  flex-shrink: 0;
+}
+
+.girl {
+  position: relative;
+  width: 250px;
+  height: 330px;
+  animation: girlFloat 5.5s ease-in-out infinite;
+}
+
+@keyframes girlFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.shadow {
+  position: absolute;
+  left: 42px;
+  bottom: 4px;
+  width: 166px;
+  height: 18px;
+  background: radial-gradient(ellipse, rgba(122, 90, 128, 0.28), transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ---------- hair tails ---------- */
+
+.twintailLeft,
+.twintailRight {
+  position: absolute;
+  top: 106px;
+  width: 62px;
+  height: 170px;
+  background: linear-gradient(180deg, #F9A9C9 0%, #F178B0 80%, #E8649E 100%);
+  z-index: 2;
+}
+
+.twintailLeft {
+  left: 14px;
+  border-radius: 0 0 50% 50% / 0 0 55% 55%;
+  transform: rotate(-10deg);
+}
+
+.twintailRight {
+  right: 14px;
+  border-radius: 0 0 50% 50% / 0 0 55% 55%;
+  transform: rotate(10deg);
+}
+
+/* ---------- legs & shoes ---------- */
+
+.legLeft,
+.legRight {
+  position: absolute;
+  top: 258px;
+  width: 24px;
+  height: 38px;
+  background: #FFE7D6;
+  border-radius: 10px 10px 16px 16px;
+  z-index: 4;
+}
+
+.legLeft { left: 100px; transform: rotate(-6deg); }
+.legRight { left: 126px; transform: rotate(6deg); }
+
+.shoeLeft,
+.shoeRight {
+  position: absolute;
+  bottom: -4px;
+  left: -3px;
+  width: 30px;
+  height: 13px;
+  background: linear-gradient(180deg, #C9B8F0, #A890D8);
+  border-radius: 50%;
+}
+
+/* ---------- arms ---------- */
+
+.armLeft {
+  position: absolute;
+  left: 84px;
+  top: 174px;
+  width: 22px;
+  height: 64px;
+  background: #FFE7D6;
+  border-radius: 11px;
+  transform: rotate(8deg);
+  transform-origin: top center;
+  z-index: 7;
+}
+
+.handLeft {
+  position: absolute;
+  left: 1px;
+  bottom: -7px;
+  width: 18px;
+  height: 18px;
+  background: #FFE7D6;
+  border-radius: 50%;
+}
+
+/* bent arm — hand gently near her cheek */
+.armRight {
+  position: absolute;
+  left: 150px;
+  top: 170px;
+  width: 20px;
+  height: 58px;
+  background: #FFE7D6;
+  border-radius: 10px;
+  transform: rotate(-32deg);
+  transform-origin: top center;
+  z-index: 7;
+}
+
+.handRight {
+  position: absolute;
+  left: 13px;
+  bottom: -2px;
+  width: 20px;
+  height: 20px;
+  background: #FFE7D6;
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 3px rgba(214, 160, 130, 0.35);
+}
+
+/* ---------- dress ---------- */
+
+.body {
+  position: absolute;
+  left: 80px;
+  top: 158px;
+  width: 90px;
+  height: 116px;
+  background: linear-gradient(180deg, #FBCFE3 0%, #F6A9C9 70%, #EF90BB 100%);
+  clip-path: polygon(34% 0, 66% 0, 100% 48%, 84% 100%, 16% 100%, 0% 48%);
+  z-index: 5;
+}
+
+.collar {
+  position: absolute;
+  left: 31px;
+  top: 2px;
+  width: 30px;
+  height: 16px;
+  background: #FFF6E3;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 4px rgba(186, 132, 168, 0.2);
+}
+
+.sleeveLeft,
+.sleeveRight {
+  position: absolute;
+  top: 2px;
+  width: 26px;
+  height: 30px;
+  background: linear-gradient(180deg, #FBCFE3, #F6A9C9);
+  border-radius: 14px;
+}
+
+.sleeveLeft { left: 2px; transform: rotate(-10deg); }
+.sleeveRight { right: 2px; transform: rotate(10deg); }
+
+/* ---------- head ---------- */
+
+.head {
+  position: absolute;
+  left: 60px;
+  top: 26px;
+  width: 130px;
+  height: 132px;
+  background: #FFE7D6;
+  border-radius: 50%;
+  transform: rotate(2deg);
+  z-index: 8;
+}
+
+/* soft shading at the bottom of the face */
+.head::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  bottom: 4%;
+  width: 76%;
+  height: 34%;
+  background: radial-gradient(ellipse, rgba(240, 177, 145, 0.22), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hairCap {
+  position: absolute;
+  left: -8px;
+  top: -18px;
+  width: 146px;
+  height: 84px;
+  background: linear-gradient(180deg, #FDB6D2 0%, #F9A9C9 60%, #F178B0 100%);
+  border-radius: 55% 55% 42% 42% / 92% 92% 22% 22%;
+  z-index: 2;
+}
+
+.hairShine {
+  position: absolute;
+  left: 26px;
+  top: 16px;
+  width: 48px;
+  height: 17px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: rotate(-16deg);
+  z-index: 3;
+}
+
+/* zig-zag bangs along the hairline, ending just above the eyes */
+.bangs {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 130px;
+  height: 42px;
+  z-index: 4;
+}
+
+.bangs i {
+  position: absolute;
+  background: linear-gradient(180deg, #F9A9C9, #F178B0);
+  display: block;
+}
+
+.bang1 {
+  left: 2px;
+  top: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 65% 20% 55% 45%;
+  transform: rotate(-8deg);
+}
+
+.bang2 {
+  left: 30px;
+  top: 0;
+  width: 46px;
+  height: 44px;
+  border-radius: 45% 50% 30% 55%;
+  transform: rotate(4deg);
+}
+
+.bang3 {
+  left: 66px;
+  top: 2px;
+  width: 46px;
+  height: 44px;
+  background: linear-gradient(180deg, #F9A9C9, #E8649E);
+  border-radius: 50% 45% 45% 50%;
+  transform: rotate(-3deg);
+}
+
+.bang4 {
+  left: 100px;
+  top: 6px;
+  width: 36px;
+  height: 40px;
+  border-radius: 25% 60% 50% 40%;
+  transform: rotate(8deg);
+}
+
+/* long side strands framing the face */
+.strandLeft,
+.strandRight {
+  position: absolute;
+  top: 52px;
+  width: 26px;
+  height: 122px;
+  background: linear-gradient(180deg, #F9A9C9, #E8649E);
+  border-radius: 13px;
+  z-index: 3;
+}
+
+.strandLeft { left: 4px; transform: rotate(7deg); }
+.strandRight { right: 4px; transform: rotate(-7deg); }
+
+/* lavender hair bow */
+.ribbonLeft,
+.ribbonRight {
+  position: absolute;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #D6C6F5, #B9A3E8);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  z-index: 6;
+}
+
+.ribbonLeft { left: 88px; transform: rotate(-32deg); }
+.ribbonRight { left: 112px; transform: rotate(32deg); }
+
+.ribbonKnot {
+  position: absolute;
+  left: 105px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: #C9B8F0;
+  border-radius: 50%;
+  z-index: 7;
+  box-shadow: inset 0 -2px 3px rgba(168, 144, 216, 0.5);
+}
+
+/* ---------- face features ---------- */
+
+.browLeft,
+.browRight {
+  position: absolute;
+  top: 48px;
+  width: 26px;
+  height: 8px;
+  border-top: 3px solid #C78FA8;
+  border-radius: 50%;
+  z-index: 8;
+}
+
+.browLeft { left: 21px; transform: rotate(-4deg); }
+.browRight { left: 81px; transform: rotate(4deg); }
+
+.eyeLeft,
+.eyeRight {
+  position: absolute;
+  top: 62px;
+  width: 30px;
+  height: 38px;
+  background: #FFFFFF;
+  border-radius: 45% 45% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: inset 0 -6px 8px rgba(179, 157, 219, 0.35);
+  overflow: hidden;
+  z-index: 8;
+  transform-origin: center;
+  animation: blink 4.8s ease-in-out infinite;
+}
+
+.eyeLeft { left: 22px; }
+.eyeRight { left: 78px; animation-delay: 0.15s; }
+
+@keyframes blink {
+  0%, 91%, 100% { transform: scaleY(1); }
+  94% { transform: scaleY(0.09); }
+  97% { transform: scaleY(1); }
+}
+
+/* iris — shifted toward the notebook (she is reading/thinking) */
+.irisLeft,
+.irisRight {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  width: 17px;
+  height: 22px;
+  background: radial-gradient(circle at 35% 32%, #D3C5F3 0%, #B39DDB 55%, #8E7BC4 100%);
+  border-radius: 50%;
+  box-shadow: inset 0 -3px 4px rgba(90, 74, 99, 0.35);
+}
+
+.eyeSpark,
+.eyeSparkRight {
+  position: absolute;
+  top: 5px;
+  left: 14px;
+  width: 8px;
+  height: 8px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.eyeSparkRight { left: 18px; top: 7px; width: 5px; height: 5px; }
+
+.blushLeft,
+.blushRight {
+  position: absolute;
+  top: 102px;
+  width: 26px;
+  height: 12px;
+  background: rgba(248, 168, 200, 0.55);
+  border-radius: 50%;
+  z-index: 8;
+}
+
+.blushLeft { left: 6px; transform: rotate(-6deg); }
+.blushRight { left: 98px; transform: rotate(6deg); }
+
+/* sweet little smile */
+.mouth {
+  position: absolute;
+  left: 56px;
+  top: 104px;
+  width: 18px;
+  height: 9px;
+  border-bottom: 3px solid #C97A8F;
+  border-radius: 50%;
+  z-index: 8;
+}
+
+/* ---------- responsive scaling ---------- */
+
+@media (max-width: 1100px) {
+  .girlWrap {
+    transform: scale(0.82);
+    transform-origin: bottom center;
+  }
+}
+
+@media (max-width: 768px) {
+  .girlWrap {
+    transform: scale(0.62);
+    transform-origin: bottom center;
+  }
+}
+
+@media (max-width: 480px) {
+  .girlWrap {
+    transform: scale(0.5);
+    transform-origin: bottom center;
+  }
+}

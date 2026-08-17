@@ -1,0 +1,165 @@
+.desk {
+  position: relative;
+  min-height: 100vh;
+  padding: 92px 24px 48px;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--soft-ink);
+  font-size: 18px;
+  font-family: var(--font-hand);
+}
+
+.title {
+  font-family: var(--font-hand);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.titleFlower {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  animation: flowerSway 4.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.titleFlower svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes flowerSway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(7deg); }
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.card {
+  position: relative;
+  background: var(--paper);
+  border: 1.5px dashed rgba(200, 130, 170, 0.4);
+  border-radius: 255px 16px 225px 16px / 16px 225px 16px 255px;
+  padding: 26px 26px 24px;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(155, 111, 143, 0.14);
+}
+
+.card:hover {
+  transform: translateY(-3px) rotate(-0.4deg);
+  box-shadow: 0 14px 32px rgba(155, 111, 143, 0.22);
+  border-style: solid;
+  border-color: rgba(244, 143, 177, 0.5);
+}
+
+.cardTape {
+  top: -12px;
+  left: 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-hand);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 253, 247, 0.75);
+  border: 1px dashed rgba(200, 130, 170, 0.3);
+  border-radius: 12px 4px 12px 4px;
+}
+
+.label {
+  font-family: var(--font-hand);
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.value {
+  font-family: var(--font-hand);
+  font-size: 14.5px;
+  color: var(--dark-text);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description {
+  font-family: var(--font-hand);
+  font-size: 14.5px;
+  color: var(--soft-ink);
+  line-height: 1.8;
+}
+
+.logoutBtn {
+  font-family: var(--font-hand);
+  background: rgba(229, 115, 139, 0.12);
+  color: var(--danger);
+  padding: 12px 26px;
+  border-radius: 255px 12px 225px 12px / 12px 225px 12px 255px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  margin-top: 18px;
+  border: 1.5px dashed rgba(229, 115, 139, 0.4);
+}
+
+.logoutBtn:hover {
+  background: rgba(229, 115, 139, 0.2);
+  transform: translateY(-2px) rotate(-1deg);
+  border-style: solid;
+}
+
+/* ---------- doodles ---------- */
+
+.doodleHeart1 { position: absolute; top: 140px; right: 8%; width: 28px; z-index: 1; transform: rotate(-12deg); opacity: 0.85; }
+.doodleStar1 { position: absolute; top: 220px; left: 7%; width: 24px; z-index: 1; transform: rotate(12deg); opacity: 0.85; }
+.doodleSpark1 { position: absolute; top: 120px; left: 16%; width: 22px; z-index: 1; transform: rotate(8deg); opacity: 0.9; }
+.doodleSpark2 { position: absolute; bottom: 160px; right: 14%; width: 18px; z-index: 1; transform: rotate(-16deg); opacity: 0.9; }
+.doodleFlower1 { position: absolute; top: 90px; right: 20%; width: 30px; z-index: 1; transform: rotate(8deg); opacity: 0.9; }
+.doodleSquiggle1 { position: absolute; bottom: 200px; left: 20%; width: 70px; z-index: 1; opacity: 0.75; }
+.doodleBow { position: absolute; bottom: 140px; right: 24%; width: 30px; z-index: 1; transform: rotate(14deg); opacity: 0.9; }
+
+@media (max-width: 768px) {
+  .desk { padding: 84px 16px 120px; }
+  .title { font-size: 27px; }
+
+  .doodleHeart1, .doodleStar1, .doodleSquiggle1, .doodleBow, .doodleFlower1 { display: none; }
+  .doodleSpark1 { top: 120px; left: 10%; width: 18px; }
+  .doodleSpark2 { bottom: 200px; right: 10%; width: 16px; }
+}
